@@ -1,0 +1,26 @@
+2025-07-16 20:13:44,191 - INFO - Attempting to load Whisper small model...
+2025-07-16 20:13:46,524 - INFO - Whisper small model loaded successfully!
+2025-07-16 20:13:46,525 - ERROR - Audio file not found: path/to/your/test_audio.wav
+2025-07-16 20:13:46,525 - ERROR - Transcription error: Invalid audio file: path/to/your/test_audio.wav
+2025-07-16 20:13:46,525 - ERROR - Traceback (most recent call last):
+  File "d:\Summerizer-Model\Meeting_Summery\backend\services\transcription_service.py", line 120, in transcribe_file
+    raise ValueError(f"Invalid audio file: {file_path}")
+ValueError: Invalid audio file: path/to/your/test_audio.wav
+
+2025-07-16 20:13:46,526 - ERROR - Transcription wrapper error: Invalid audio file: path/to/your/test_audio.wav
+2025-07-16 20:13:46,528 - ERROR - Bytes transcription error: Error opening <_io.BytesIO object at 0x0000023E9E331AD0>: Format not recognised.
+2025-07-16 20:13:46,529 - ERROR - Traceback (most recent call last):
+  File "d:\Summerizer-Model\Meeting_Summery\backend\services\transcription_service.py", line 168, in transcribe_bytes
+    audio_data, sample_rate = sf.read(file_bytes)
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ankit\AppData\Roaming\Python\Python312\site-packages\soundfile.py", line 305, in read
+    with SoundFile(file, 'r', samplerate, channels,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ankit\AppData\Roaming\Python\Python312\site-packages\soundfile.py", line 690, in __init__
+    self._file = self._open(file, mode_int, closefd)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ankit\AppData\Roaming\Python\Python312\site-packages\soundfile.py", line 1265, in _open
+    raise LibsndfileError(err, prefix="Error opening {0!r}: ".format(self.name))
+soundfile.LibsndfileError: Error opening <_io.BytesIO object at 0x0000023E9E331AD0>: Format not recognised.
+
+2025-07-16 20:13:46,530 - ERROR - Transcription wrapper error: Error opening <_io.BytesIO object at 0x0000023E9E331AD0>: Format not recognised.
